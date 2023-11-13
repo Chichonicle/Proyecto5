@@ -7,5 +7,16 @@
     border-radius: 1em;
     border: 0.5 solid blueviolet;
 
-    margin-bottom: 4em;
+    margin-bottom: 2em;
+}
+
+.Name{
+    margin-top: 0.5em;
+    color: black;
+
+
+}
+
+.errorMsg {
+    padding-bottom: 1em;
 }
