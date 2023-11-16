@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
+import '@mantine/core/styles.css';
+import { MantineProvider } from '@mantine/core';
 import "./index.css";
+import App from "./App.jsx";
 import { BrowserRouter } from 'react-router-dom';
-import { MantineProvider } from "@mantine/core";
 
 //REDUX
 
@@ -22,11 +23,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-    <MantineProvider>
     <BrowserRouter>
+    <MantineProvider>
     <App />
-    </BrowserRouter>
     </MantineProvider>
+    </BrowserRouter>
     </PersistGate>
     </Provider>
   </React.StrictMode>

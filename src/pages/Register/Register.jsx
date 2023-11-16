@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { CustomInput } from "../../common/Custominput/CustomInput";
+import React, { useState, useEffect } from "react";
 import "./Register.css";
+import { CustomInput } from "../../common/Custominput/CustomInput";
 import { validator } from "../../services/useful";
 import { registerUser } from "../../services/apiCalls";
+import { useNavigate } from "react-router-dom";
 
 export const Register = () => {
   const navigate = useNavigate();
@@ -66,47 +66,48 @@ export const Register = () => {
     <div className="registerDesign">
       <div className="Name">Name</div>
       <CustomInput
+         disabled={false}
         design={`inputDesign ${
           userError.nameError !== "" ? "inputDesignError" : ""
         }`}
         type={"text"}
         name={"name"}
         placeholder={""}
-        // value={}
+        value={""}
         functionProp={functionHandler}
         functionBlur={errorCheck}
       />
       <div className="Name">Email</div>
       <CustomInput
+         disabled={false}
         design={`inputDesign ${
           userError.emailError !== "" ? "inputDesignError" : ""
         }`}
         type={"email"}
         name={"email"}
         placeholder={""}
-        // value={}
+        value={""}
         functionProp={functionHandler}
         functionBlur={errorCheck}
       />
       <div className="errorMsg">{userError.emailError}</div>
       <div className="Name">Password</div>
       <CustomInput
+         disabled={false}
         design={`inputDesign ${
           userError.passwordError !== "" ? "inputDesignError" : ""
         }`}
         type={"password"}
         name={"password"}
         placeholder={""}
-        // value={}
+        value={""}
         functionProp={functionHandler}
         functionBlur={errorCheck}
       />
       <div className="errorMsg">{userError.passwordError}</div>
 
       <div className="errorMsg">{userError.nameError}</div>
-      <div className="buttonSubmit" onClick={Submit}>
-        Submit
-      </div>
+      <div className="buttonSubmit" onClick={Submit}>Submit</div>
     </div>
   );
 };

@@ -9,5 +9,33 @@
     justify-content: center;
     align-items: center;
 
-    background-color: lightgreen;
+    background-color: lightseagreen;
+}
+
+.avatarCharacter {
+    margin: 2em;
+    height: 10em;
+    
+}
+
+
+.proyectDesign {
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+
+    background-color: rgb(71, 165, 161);
+    height: 15em;
+    padding: 0.5em;
+    color: white;
+    
+  
+}
+
+.card:hover {
+    transition: 0.5s;
+    background-color: orange;
 }
