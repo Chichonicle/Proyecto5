@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import './Home.css'
-import { Container, Row, Col } from "react-bootstrap";
+// import { Container, Row, Col } from "react-bootstrap";
 import { GetProyects } from '../../services/apiCalls';
 
 
@@ -24,18 +24,23 @@ export const Home = () => {
      return (
         <div className="homeDesign">
             {proyects.length > 0 ? (
-                <Container>
-                    <Row>
+                <>
+            
+                 {/* <Container>
+                     <Row> */}
                         {proyects.map((proyects) => {
                             return (
-                                <Col className='card' sm={12} lg={6} xl={2} xxl={2} key={proyects.id}>
-                                    {proyects.tattooname}
-                                    <img className='avatarCharacter' src={proyects.tattoo_url} alt={proyects.tattooname} />
-                                </Col>
+                                // <div className="gallery">
+                                    <div className='card' key={proyects.id}>
+                                        {proyects.tattooname}
+                                        <img className='avatarCharacter' src={proyects.tattoo_url} alt={proyects.tattooname} />
+                                    </div>
+                                // </div>
                             );
                         })}
-                    </Row>
-                </Container>
+                     {/* </Row>
+                 </Container> */}
+                </>
             ) : (
                 <div> aun no han venido </div>
             )}
