@@ -1,23 +1,41 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Profile.css'
 import { useSelector } from 'react-redux';
 import { userData } from '../userSlice';
 import { CustomInput } from '../../common/Custominput/CustomInput';
+import { useNavigate } from 'react-router-dom';
 
 export const Profile = () => {
     const datosRdxUser = useSelector(userData);
+
+    const navigate = useNavigate();
 
     const [profile, setProfile] = useState({
         email: datosRdxUser.credentials.user.email,
         name: datosRdxUser.credentials.user.name,
         role: datosRdxUser.credentials.user.role,
+       
     });
+
+    useEffect(() => {
+        //RDX se puede seguir como un hook de useState... por lo tanto seguimos
+    
+        if(!datosRdxUser.credentials.token){
+          navigate("/")
+        }
+      }, [datosRdxUser]);
+    
 
     const errorCheck = (e) => {
 
         let error = "";
     
         error = validator(e.target.user.name, e.target.value);
+
+        setProfileError((prevState) => ({
+            ...prevState,
+            [e.target.user.name + "Error"]: error,
+        }))
     }
     const functionHandler = (e) => {
         setProfile((prevState) => ({
@@ -62,4 +80,8 @@ export const Profile = () => {
             />
         </div>
     );
-;}
+
+}
+
+
+

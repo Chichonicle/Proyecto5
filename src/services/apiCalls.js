@@ -12,13 +12,18 @@ export const registerUser = async (body) => {
     return await axios.post(`http://localhost:3000/users/register`, body);
 }
 
-// export const GetProfile = async () =>{
+export const GetProfile = async () =>{
 
-//     return await axios.get(`http://localhost:3000/users/profile`, body);
-// }
+    return await axios.get(`http://localhost:3000/users/profile`);
+}
 
 
-export const GetProyects = async (body) => {
+export const GetProyects = async () => {
 
-    return await axios.get(`http://localhost:3000/users/proyects`, body);
+    return await axios.get(`http://localhost:3000/users/proyects`);
+}
+
+export const GetWorkers = async () => {
+
+    return await axios.get(`http://localhost:3000/users/allworkers`);
 }
