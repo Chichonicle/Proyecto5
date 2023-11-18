@@ -2,10 +2,8 @@
 import "./Workers.css"
 
 import { useState, useEffect } from 'react';
-import { CustomInput } from '../../common/Custominput/CustomInput';
-import { useSelector } from 'react-redux';
-import { userData } from '../userSlice';
 import { GetWorkers } from "../../services/apiCalls";
+import { WorkersCards } from "../../common/WorkersCard/WorkersCard";
 
 
 export const Workers = () => {
@@ -33,13 +31,28 @@ export const Workers = () => {
             {
                 workers.length > 0 
 
-                ? (<div>
-                </div>)
-
-                : (<div>Aun no los tenemos</div>)
-            }
+                ? (
+                <div>
+                    {workers.map((worker) => {
+                        return (
+                            <WorkersCards
+                              key={worker.id}
+                              name={worker.name}
+                              license={worker.licenseNumber}
+                              photo={worker.photo}
+                              />
+                        );
+                      })}
+                    
+                    
+                </div>
+                
+                )  : (
+                <div>Aun no los tenemos</div>
+                )}
+            
         </div>
-    )
+        );
+                };
 
-
-};
+    

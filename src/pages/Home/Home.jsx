@@ -28,7 +28,7 @@ export const Home = () => {
             
                  {/* <Container>
                      <Row> */}
-                        {proyects.map((proyects) => {
+                        {proyects.map((proyects) => { console.log(proyects);
                             return (
                                 // <div className="gallery">
                                     <div className='card' key={proyects.id}>
