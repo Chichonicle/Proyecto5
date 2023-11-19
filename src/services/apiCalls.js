@@ -26,4 +26,15 @@ export const GetProyects = async () => {
 export const GetWorkers = async () => {
 
     return await axios.get(`http://localhost:3000/users/allworkers`);
+
 }
+
+export const GetAppointments = async (token) => {
+
+    return await axios.get(`http://localhost:3000/users/appointments`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+    };
+
