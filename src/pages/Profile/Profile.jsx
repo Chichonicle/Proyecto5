@@ -10,6 +10,12 @@ export const Profile = () => {
 
     const navigate = useNavigate();
 
+    const Citas = () => {
+    setTimeout(()=>{
+        navigate("/Appointments");
+    },500);
+}
+
     const [profile, setProfile] = useState({
         email: datosRdxUser.credentials.user.email,
         name: datosRdxUser.credentials.user.name,
@@ -78,8 +84,11 @@ export const Profile = () => {
                 functionProp={functionHandler}
                 functionBlur={errorCheck}
             />
+            <div className="citas" onClick={Citas}>Citas</div>
         </div>
+        
     );
+    
 
 }
 

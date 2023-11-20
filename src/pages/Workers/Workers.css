@@ -12,3 +12,9 @@
     background-color: lightseagreen;
 }
 
+.worker {
+    background-color: lightslategray;
+    margin-top: 0.3em;
+    border: 0.1em solid black;
+    border-radius: 0.5em;
+}

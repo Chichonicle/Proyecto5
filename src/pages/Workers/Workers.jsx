@@ -35,12 +35,14 @@ export const Workers = () => {
                 <div>
                     {workers.map((worker) => {
                         return (
+                            <div className="worker">
                             <WorkersCards
                               key={worker.id}
                               name={worker.name}
                               license={worker.licenseNumber}
                               photo={worker.photo}
                               />
+                              </div>
                         );
                       })}
                     

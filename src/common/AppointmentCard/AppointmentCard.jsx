@@ -6,12 +6,12 @@ import '.AppointmentCard.sass'
 export const AppointmentCard = ({title, description, date, turn, worker, client}) => {
      return (
         <div>
-            <div>{title}</div>
-            <div>{description}</div>
-            <div>{date}</div>
-            <div>{turn}</div>
-            <div>{worker}</div>
-            <div>{client} </div>
+            <div>Titulo{title}</div>
+            <div>Descripción{description}</div>
+            <div>Fecha{date}</div>
+            <div>Turno{turn}</div>
+            <div>Trabajador{worker}</div>
+            <div>Cliente{client} </div>
         </div>
 
      )
