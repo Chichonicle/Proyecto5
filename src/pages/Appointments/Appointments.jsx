@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { GetAppointments } from "../../services/apiCalls";
 import { userData } from "../userSlice";
 import { AppointmentCard } from "../../common/AppointmentCard/AppointmentCard";
+import "./Appointments.css"
 
 
 
@@ -14,14 +15,13 @@ export const Appointments = () => {
     
 
     useEffect(() => {
-
+        console.log(appointments)
         if (appointments.length === 0) {
-        
                 GetAppointments(token)  
                     .then(
                         appointments => {
-                            setAppointments(appointments.data.data)
                             console.log(appointments)
+                            setAppointments(appointments.data.myAppointments)
                         }
                     )
                     .catch((error) =>  console.log(error));
@@ -43,8 +43,8 @@ export const Appointments = () => {
                                 description={appointment.description}
                                 date={appointment.appointment_date}
                                 turn={appointment.appointment_turn}
-                                worker={appointment.workerAppointment.name}
-                                cilent={appointment.userAppointment.name}
+                                worker={appointment.worker}
+                                client={appointment.Client}
                             />)
                     })
                     }

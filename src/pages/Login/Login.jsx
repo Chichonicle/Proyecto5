@@ -48,7 +48,7 @@ export const Login = () => {
 
                 //Una vez guardado el token....nos vamos a home....
                 setTimeout(()=>{
-                    navigate("/profile");
+                    navigate("/");
                 },500);
             }
         )
