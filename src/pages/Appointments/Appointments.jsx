@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { GetAppointments } from "../../services/apiCalls";
+import { userData } from "../userSlice";
+import { AppointmentCard } from "../../common/AppointmentCard/AppointmentCard";
 
 
 
@@ -12,13 +14,14 @@ export const Appointments = () => {
     
 
     useEffect(() => {
+
         if (appointments.length === 0) {
         
                 GetAppointments(token)  
                     .then(
-                        citas => {
-                            setAppointments(citas.data.data)
-                            console.log(citas.data)
+                        appointments => {
+                            setAppointments(appointments.data.data)
+                            console.log(appointments)
                         }
                     )
                     .catch((error) =>  console.log(error));
@@ -28,6 +31,7 @@ export const Appointments = () => {
 
 
     return (
+
         <div className='citasDesign'>
             {appointments.length > 0 ? (
                 <div className='appointmentsRoster'>

@@ -31,10 +31,10 @@ export const GetWorkers = async () => {
 
 export const GetAppointments = async (token) => {
 
-    return await axios.get(`http://localhost:3000/users/appointments`, {
+    return await axios.get(`http://localhost:3000/users/appointments` ,{
         headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-    };
+          Authorization: `Bearer ${token}`
+        }
+      })
+    }
 

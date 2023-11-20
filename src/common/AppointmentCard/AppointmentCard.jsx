@@ -1,11 +1,11 @@
 
 
 import React from 'react'
-import '.AppointmentCard.sass'
+import './AppointmentCard.sass'
 
 export const AppointmentCard = ({title, description, date, turn, worker, client}) => {
      return (
-        <div>
+        <div className='AppointmentCard'>
             <div>Titulo{title}</div>
             <div>Descripción{description}</div>
             <div>Fecha{date}</div>
