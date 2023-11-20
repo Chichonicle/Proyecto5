@@ -12,6 +12,11 @@ export const Appointments = () => {
     const rdxUser = useSelector(userData);
     const token = rdxUser.credentials.token;
     const [appointments, setAppointments] = useState([]);
+    const Citas = () => {
+        setTimeout(()=>{
+            navigate("/CreateAppointment");
+        },500);
+    }
     
 
     useEffect(() => {
@@ -31,8 +36,9 @@ export const Appointments = () => {
 
 
     return (
-
+        
         <div className='citasDesign'>
+            <div className="citaNueva" onClick={Citas}>Nueva cita</div>
             {appointments.length > 0 ? (
                 <div className='appointmentsRoster'>
                     {appointments.map(appointment => {

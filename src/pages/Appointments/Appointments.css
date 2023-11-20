@@ -3,6 +3,10 @@
     height: 90vh;
     width: 100vw;
     background-color: lightseagreen;
+    display:grid;
+    justify-items: center;
+
+    
 
 }
 
@@ -18,4 +22,19 @@
     background-color: lightseagreen;
     
 
+}
+
+.citaNueva {
+    height: 3em;
+    width: 8em;
+
+    border-radius: 1em;
+    background-color: violet;
+    color: white;
+    font-weight: bolder;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
 }

@@ -11,3 +11,22 @@
     background-color: lightseagreen;
 }
 
+.citas {
+    height: 3em;
+    width: 8em;
+
+    border-radius: 1em;
+    background-color: violet;
+    color: white;
+    font-weight: bolder;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.citas:hover {
+    transition: 0.4s;
+    background-color: blueviolet;
+    cursor: pointer;
+}
