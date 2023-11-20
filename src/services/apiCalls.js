@@ -30,9 +30,7 @@ export const GetWorkers = async () => {
 }
 
 export const GetAppointments = async (token) => {
-    console.log('----------------------------------');
-    console.log(token);
-    console.log('----------------------------------');
+   
 
     return await axios.get(`http://localhost:3000/users/appointments` ,{
         headers: {
