@@ -16,9 +16,9 @@ export const Newappointment = () => {
     title: "",
     description: "",
     date: "",
-    turn: "",
-    worker: "",
-    client: datosRdxUser.credentials.user.name,
+    turn: "morning",
+    worker: 1,
+    client: datosRdxUser.credentials.user.id,
   });
 
   const functionHandler = (e) => {
@@ -36,7 +36,7 @@ export const Newappointment = () => {
       }
     }
 
-    CreateAppointment(token)
+    CreateAppointment(create, token)
       .then((resultado) => {
         console.log(resultado);
 
