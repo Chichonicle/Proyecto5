@@ -40,3 +40,12 @@ export const GetAppointments = async (token) => {
       })
     }
 
+    export const CreateAppointment = async (body, token) => {
+    
+        return await axios.post(`http://localhost:3000/appointments/create`, body,{
+            headers: {
+              Authorization: `Bearer ${token}`
+            },
+            
+          });
+    }

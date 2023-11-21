@@ -1,0 +1,22 @@
+
+.inputDesign {
+
+    height: 2em;
+    width: 15em;
+
+    border-radius: 1em;
+    border: 0.5 solid blueviolet;
+
+    margin-bottom: 2em;
+}
+
+.Name{
+    margin-top: 0.5em;
+    color: black;
+
+
+}
+
+.errorMsg {
+    padding-bottom: 1em;
+}
