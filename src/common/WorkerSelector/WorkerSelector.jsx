@@ -25,7 +25,7 @@ export const WorkerSelector = ({design, type, name, placeholder,value, disabled,
             className={design}
             name={name}
             value={value || undefined}
-            onChange={(e)=>{functionProp(e);console.log(e)}}  >  
+            onChange={(e)=>functionProp(e)}  >  
             {workers.map((worker) =>{
                 return(
                     <option value={worker.id}>{worker.name}</option>

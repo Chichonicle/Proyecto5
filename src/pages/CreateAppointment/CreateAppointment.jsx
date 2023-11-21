@@ -77,15 +77,10 @@ export const Newappointment = () => {
         functionProp={functionHandler}
       />
       <div className="Name">Turno</div>
-      <ImputAppointments
-        disabled={false}
-        design={"inputDesign"}
-        type={"text"}
-        name={"turn"}
-        placeholder={""}
-        value={""}
-        functionProp={functionHandler}
-      />
+      <select className={"inputDesign"} name="turn" onChange={functionHandler}>
+        <option value={"morning"}>{"Mañana"}</option>
+        <option value={"evening"}>{"Tarde"}</option>
+      </select>
       <div className="Name">Trabajador</div>
       <WorkerSelector
         disabled={false}
@@ -93,7 +88,6 @@ export const Newappointment = () => {
         type={"text"}
         name={"worker"}
         placeholder={""}
-        value={""}
         functionProp={functionHandler}
       />
       {/* <ImputAppointments
