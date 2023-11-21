@@ -49,3 +49,14 @@ export const GetAppointments = async (token) => {
             
           });
     }
+
+    export const GetWorkerAppointments = async (token) => {
+   
+
+      return await axios.get(`http://localhost:3000/workers/appointments` ,{
+          headers: {
+            Authorization: `Bearer ${token}`
+          },
+          
+        })
+      }
