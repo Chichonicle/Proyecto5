@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
     const token = rdxUser.credentials.token;
     const [appointments, setAppointments] = useState([]);
     const [loading, setLoading] = useState(true);
-    const isUser = rdxUser.credentials.user.role === "user";
+    const isUser = rdxUser.credentials?.user?.role === "user";
 
     const navigate = useNavigate();
 
@@ -22,6 +22,14 @@ import { useNavigate } from "react-router-dom";
             navigate("/CreateAppointment");
         }, 500);
     }
+
+    useEffect(() => {
+        //RDX se puede seguir como un hook de useState... por lo tanto seguimos
+    
+        if(!rdxUser.credentials.token){
+          navigate("/")
+        }
+      }, [rdxUser]);
 
     useEffect(() => {
         const fetchData = async () => {
