@@ -6,8 +6,6 @@
     margin-top: 0px;
     background-color: red;
     display: grid;
-    /* grid-template-columns: 15em 15em 15em 15em; */
-    /* flex-wrap: wrap; */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     background-color: lightseagreen;
 }

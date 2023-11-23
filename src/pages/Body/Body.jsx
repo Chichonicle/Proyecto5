@@ -8,6 +8,7 @@ import { Appointments } from "../Appointments/Appointments";
 import { Newappointment } from "../CreateAppointment/CreateAppointment";
 import { AppointmentsWorker } from "../WorkerAppointments/WorkerAppointments";
 import { AllUsers } from "../AllUsers/AllUsers";
+import { AllAppointments } from "../AllAppointments/AllAppointments";
 
 export const Body = () => {
   return (
@@ -23,6 +24,7 @@ export const Body = () => {
         <Route path="/appointmentsworker" element={<AppointmentsWorker />} />
         <Route path="/createappointment" element={<Newappointment />} />
         <Route path="/allusers" element={<AllUsers />} />
+        <Route path="/allappointments" element={<AllAppointments />} />
       </Routes>
     </>
   );
