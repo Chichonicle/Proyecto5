@@ -15,6 +15,7 @@ export const Header = () => {
     
     const navigate = useNavigate();
     const rdxCredentials = useSelector(userData);
+    const isSuperadmin = rdxCredentials.credentials?.user?.role === "super_admin";
 
     const logOutMe = () => {
 
@@ -26,6 +27,12 @@ export const Header = () => {
 
     return (
         <div className="headerDesign">
+          {isSuperadmin && (<div>
+              <LinkButton path={"/allUsers"} title={"Users"} />
+          </div>)}
+          {isSuperadmin && (<div>
+              <LinkButton path={"/allAppointments"} title={"Appointments"} />
+          </div>)}
           <LinkButton path={"/workers"} title={"Workers"} />
           <LinkButton path={"/"} title={"Home"} />
     
