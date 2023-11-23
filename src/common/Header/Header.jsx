@@ -57,7 +57,7 @@ export const Header = () => {
             title={rdxCredentials.credentials.user.name}
           />
           <div onClick={logOutMe}>
-            <LinkButton path={"/"} title={"log out"} />
+            <LinkButton path={"/"} title={"Log out"} />
           </div>
         </>
       )}
