@@ -14,3 +14,10 @@
     color: white;
     font-weight: bold;
 }
+
+.Role{
+    align-items:start;
+    display: flex;
+    margin-right: 4em;
+    color: black;
+}

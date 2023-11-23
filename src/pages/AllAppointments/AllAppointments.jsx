@@ -28,7 +28,7 @@ export const AllAppointments = () => {
    if (appointments.length === 0) {
     GetAllAppointments(token)
     .then(
-        appointments => {console.log(appointments);
+        appointments => {
             setAppointments(appointments.data.myAppointments)
         }
     )

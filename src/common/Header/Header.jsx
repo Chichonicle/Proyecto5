@@ -13,6 +13,7 @@ export const Header = () => {
   const navigate = useNavigate();
   const rdxCredentials = useSelector(userData);
   const isSuperadmin = rdxCredentials.credentials?.user?.role === "super_admin";
+  const isAdmin = rdxCredentials.credentials?.user?.role === "admin";
 
   const logOutMe = () => {
     dispatch(logout({ credentials: "" }));
@@ -22,6 +23,18 @@ export const Header = () => {
 
   return (
     <div className="headerDesign">
+
+{isAdmin && (
+        <div className="Role">
+          <h2>Worker</h2>
+        </div>
+      )}
+{isSuperadmin && (
+        <div className="Role">
+          <h2>SuperAdmin</h2>
+        </div>
+      )}
+
       {isSuperadmin && (
         <div>
           <LinkButton path={"/allUsers"} title={"Users"} />
