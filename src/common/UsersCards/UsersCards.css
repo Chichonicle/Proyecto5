@@ -1,0 +1,15 @@
+
+.AllUserCardDesign{
+
+    height: 8em;
+    width: 20em;
+    
+    border-radius: 2em;
+    border: 0.4em solid black;
+    background-color: white;
+
+    margin-top: 1em;
+    color: black;
+    display: grid;
+}
+

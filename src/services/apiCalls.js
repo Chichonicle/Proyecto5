@@ -44,7 +44,7 @@ export const GetWorkerAppointments = async (token) => {
   });
 };
 
-export const AllUsers = async (token) => {
+export const GetAllUsers = async (token) => {
   return await axios.get(`http://localhost:3000/users/all`, {
     headers: {
       Authorization: `Bearer ${token}`,
