@@ -14,7 +14,8 @@ export const Profile = () => {
     setTimeout(()=>{
         if( datosRdxUser.credentials?.user?.role === "user"){
         navigate("/Appointments")}
-        {navigate("/Appointments")}
+        else 
+        {navigate("/AppointmentsWorker")}
     },500);
 }
 
