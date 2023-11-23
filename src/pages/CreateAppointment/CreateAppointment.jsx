@@ -12,6 +12,12 @@ export const Newappointment = () => {
   const datosRdxUser = useSelector(userData);
   const token = datosRdxUser.credentials.token;
 
+  useEffect(() => {
+    if (!datosRdxUser.credentials.token) {
+      navigate("/");
+    }
+  }, [datosRdxUser]);
+
   const [create, setCreate] = useState({
     title: "",
     description: "",
@@ -30,7 +36,6 @@ export const Newappointment = () => {
 
   const Submit = () => {
     for (let test1 in create) {
-      console.log(create[test1], test1);
       if (create[test1] === "") {
         return;
       }
@@ -38,8 +43,6 @@ export const Newappointment = () => {
 
     CreateAppointment(create, token)
       .then((resultado) => {
-        console.log(resultado);
-
         navigate("/profile");
       })
       .catch((error) => console.log(error));
@@ -90,16 +93,6 @@ export const Newappointment = () => {
         placeholder={""}
         functionProp={functionHandler}
       />
-      {/* <ImputAppointments
-            disabled={false}
-            design={"inputDesign"}
-            type={"text"}
-            name={"worker"}
-            placeholder={""}
-            value={""}
-            functionProp={functionHandler}
-            
-          /> */}
       <div className="Name">Cliente</div>
       <ImputAppointments
         disabled={true}

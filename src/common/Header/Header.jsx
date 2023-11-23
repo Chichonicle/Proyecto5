@@ -1,15 +1,12 @@
 import React from "react";
 import "./Header.css";
 import { LinkButton } from "../LinkButton/LinkButton";
-
-//REDUX
 import { useSelector, useDispatch } from "react-redux";
 import { logout, userData } from "../../pages/userSlice";
 import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
   const rdxCredentials = useSelector(userData);
   const isSuperadmin = rdxCredentials.credentials?.user?.role === "super_admin";

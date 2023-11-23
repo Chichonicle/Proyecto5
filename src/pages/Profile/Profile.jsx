@@ -10,6 +10,12 @@ export const Profile = () => {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (!datosRdxUser.credentials.token) {
+      navigate("/");
+    }
+  }, [datosRdxUser]);
+
   const Citas = () => {
     setTimeout(() => {
       if (datosRdxUser.credentials?.user?.role === "user") {
@@ -27,7 +33,7 @@ export const Profile = () => {
   });
 
   useEffect(() => {
-    //RDX se puede seguir como un hook de useState... por lo tanto seguimos
+
 
     if (!datosRdxUser.credentials.token) {
       navigate("/");

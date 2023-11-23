@@ -4,19 +4,24 @@ import { GetAllUsers } from "../../services/apiCalls";
 import { UsersCards } from "../../common/UsersCards/UsersCards";
 import { useSelector } from "react-redux";
 import { userData } from "../userSlice";
-
+import { useNavigate } from "react-router-dom";
 
 export const AllUsers = () => {
   const [users, setUsers] = useState([]);
   const rdxUser = useSelector(userData);
   const token = rdxUser.credentials.token;
-
-
+  const isSuperadmin = rdxUser.credentials?.user?.role === "super_admin";
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!isSuperadmin) {
+      navigate("/");
+    }
+  }, [isSuperadmin]);
 
   useEffect(() => {
-    if (users.length === 0) { console.log("entra");
+    if (users.length === 0) {
       GetAllUsers(token)
-        .then((result) => {console.log(result);
+        .then((result) => {
           if (result.data.length > 0) {
             setUsers(result.data);
           }

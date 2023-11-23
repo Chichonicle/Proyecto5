@@ -1,13 +1,7 @@
 import React from "react";
 import "./AppointmentCardWorker.css";
 
-export const AppointmentCardWorker = ({
-  title,
-  description,
-  date,
-  turn,
-  client,
-}) => {
+export const AppointmentCardWorker = ({title,description, date, turn,client,}) => {
   return (
     <div className="AppointmentCard">
       <div>Titulo: {title}</div>

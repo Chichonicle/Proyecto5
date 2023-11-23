@@ -1,20 +1,18 @@
-
-
 .WorkersDesign {
-    height: 90vh;
-    width: 100vw;
+  height: 90vh;
+  width: 100vw;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    background-color: lightseagreen;
+  background-color: lightseagreen;
 }
 
 .worker {
-    background-color: lightslategray;
-    margin-top: 0.3em;
-    border: 0.1em solid black;
-    border-radius: 0.5em;
+  background-color: lightslategray;
+  margin-top: 0.3em;
+  border: 0.1em solid black;
+  border-radius: 0.5em;
 }

@@ -26,7 +26,6 @@ export const Appointments = () => {
   };
 
   useEffect(() => {
-    //RDX se puede seguir como un hook de useState... por lo tanto seguimos
 
     if (!rdxUser.credentials.token) {
       navigate("/");
@@ -38,9 +37,8 @@ export const Appointments = () => {
       try {
         const getFunction = isUser ? GetAppointments : GetWorkerAppointments;
         const response = await getFunction(token);
-        setAppointments(response.data.myAppointments || []); // Manejar array vacío
+        setAppointments(response.data.myAppointments || []);
       } catch (error) {
-        console.error(error);
       }
 
       setLoading(false);

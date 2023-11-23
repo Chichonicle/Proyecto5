@@ -13,50 +13,41 @@ export const AllAppointments = () => {
   const isSuperadmin = rdxUser.credentials?.user?.role === "super_admin";
   const navigate = useNavigate();
 
-
-
-
   useEffect(() => {
-    //RDX se puede seguir como un hook de useState... por lo tanto seguimos
-
     if (!isSuperadmin) {
       navigate("/");
     }
-  }, [rdxUser]);
+  }, [isSuperadmin]);
 
   useEffect(() => {
-   if (appointments.length === 0) {
-    GetAllAppointments(token)
-    .then(
-        appointments => {
-            setAppointments(appointments.data.myAppointments)
-        }
-    )
-    .catch(error => console.log(error));
-
-   }
+    if (appointments.length === 0) {
+      GetAllAppointments(token)
+        .then((appointments) => {
+          setAppointments(appointments.data.myAppointments);
+        })
+        .catch((error) => console.log(error));
+    }
   }, [appointments]);
 
   return (
     <div className="citasDesign">
-      
-        <div className="appointmentsRoster">
-          {appointments.length > 0 ? (
-            appointments.map((appointment) => (
-              <AppointmentCard
-                key={appointment.id}
-                title={appointment.title}
-                description={appointment.description}
-                date={appointment.appointment_date}
-                turn={appointment.appointment_turn}
-                worker={appointment.worker}
-                client={appointment.Client}
-              />
-            ))
-          ) : (
-            <div>No hay citas disponibles.</div>
-          )}
-        </div>
+      <div className="appointmentsRoster">
+        {appointments.length > 0 ? (
+          appointments.map((appointment) => (
+            <AppointmentCard
+              key={appointment.id}
+              title={appointment.title}
+              description={appointment.description}
+              date={appointment.appointment_date}
+              turn={appointment.appointment_turn}
+              worker={appointment.worker}
+              client={appointment.Client}
+            />
+          ))
+        ) : (
+          <div>No hay citas disponibles.</div>
+        )}
+      </div>
     </div>
   );
 };

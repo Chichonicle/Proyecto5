@@ -66,7 +66,7 @@ export const Register = () => {
     <div className="registerDesign">
       <div className="Name">Name</div>
       <CustomInput
-         disabled={false}
+        disabled={false}
         design={`inputDesign ${
           userError.nameError !== "" ? "inputDesignError" : ""
         }`}
@@ -79,7 +79,7 @@ export const Register = () => {
       />
       <div className="Name">Email</div>
       <CustomInput
-         disabled={false}
+        disabled={false}
         design={`inputDesign ${
           userError.emailError !== "" ? "inputDesignError" : ""
         }`}
@@ -93,7 +93,7 @@ export const Register = () => {
       <div className="errorMsg">{userError.emailError}</div>
       <div className="Name">Password</div>
       <CustomInput
-         disabled={false}
+        disabled={false}
         design={`inputDesign ${
           userError.passwordError !== "" ? "inputDesignError" : ""
         }`}
@@ -107,7 +107,9 @@ export const Register = () => {
       <div className="errorMsg">{userError.passwordError}</div>
 
       <div className="errorMsg">{userError.nameError}</div>
-      <div className="buttonSubmit" onClick={Submit}>Submit</div>
+      <div className="buttonSubmit" onClick={Submit}>
+        Submit
+      </div>
     </div>
   );
 };
