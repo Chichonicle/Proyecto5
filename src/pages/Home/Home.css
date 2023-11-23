@@ -5,18 +5,10 @@
     height: auto;
     margin-top: 0px;
     background-color: red;
-    display: flex;
-    grid-template-columns: 15em 15em 15em 15em;
-    flex-wrap: wrap;
-/* 
-    height: 90vh;
-    width: 100vw;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
-
+    display: grid;
+    /* grid-template-columns: 15em 15em 15em 15em; */
+    /* flex-wrap: wrap; */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     background-color: lightseagreen;
 }
 

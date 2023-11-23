@@ -12,7 +12,9 @@ export const Profile = () => {
 
     const Citas = () => {
     setTimeout(()=>{
-        navigate("/Appointments");
+        if( datosRdxUser.credentials?.user?.role === "user"){
+        navigate("/Appointments")}
+        {navigate("/Appointments")}
     },500);
 }
 

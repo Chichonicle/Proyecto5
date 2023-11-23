@@ -5,6 +5,8 @@
     background-color: lightseagreen;
     display:grid;
     justify-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
 
     
 
