@@ -53,6 +53,7 @@ export const Appointments = () => {
         <div className="citaNueva" onClick={CitaNueva}>
           Nueva cita
         </div>
+        
       )}
       {!loading ? (
         <div className="appointmentsRoster">
@@ -65,8 +66,9 @@ export const Appointments = () => {
                 date={appointment.appointment_date}
                 turn={appointment.appointment_turn}
                 worker={appointment.worker}
-                client={appointment.Client}
+                client={appointment.Client} 
               />
+              
             ))
           ) : (
             <div>No hay citas disponibles.</div>

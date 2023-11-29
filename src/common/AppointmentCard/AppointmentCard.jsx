@@ -11,6 +11,10 @@ export const AppointmentCard = ({title, description, date, turn, worker, client}
             <div>Turno: {turn}</div>
             <div>Trabajador: {worker}</div>
             <div>Cliente: {client} </div>
+            <div className='buttons'>
+            <button className='Delete'>Delete</button>
+            <button className='Delete'>Edit</button>
+            </div>
         </div>
      )
 }

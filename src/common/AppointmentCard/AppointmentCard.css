@@ -13,3 +13,29 @@
       display: grid;
 }
 
+.Delete {
+      height: 3em;
+  width: 8em;
+
+  border-radius: 1em;
+  background-color: violet;
+  color: white;
+  font-weight: bolder;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.Delete:hover {
+      transition: 0.4s;
+  background-color: blueviolet;
+  cursor: pointer;
+}
+
+.buttons {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+}
