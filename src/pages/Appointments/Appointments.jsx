@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import {
   GetAppointments,
   GetWorkerAppointments,
+  deleteAppointment,
 } from "../../services/apiCalls";
 import { userData } from "../userSlice";
 import { AppointmentCard } from "../../common/AppointmentCard/AppointmentCard";
@@ -24,6 +25,14 @@ export const Appointments = () => {
       navigate("/CreateAppointment");
     }, 500);
   };
+
+  const onclickDelete = (id) => {
+    deleteAppointment(token, { id });
+
+    setAppointments((prev) =>
+      prev.filter((appointment) => appointment.id !== id)
+    );
+  alert("Cita eliminada")};
 
   useEffect(() => {
     if (!rdxUser.credentials.token) {
@@ -58,14 +67,8 @@ export const Appointments = () => {
             appointments.map((appointment) => (
               <AppointmentCard
                 key={appointment.id}
-                title={appointment.title}
-                description={appointment.description}
-                date={appointment.appointment_date}
-                turn={appointment.appointment_turn}
-                worker={appointment.worker}
-                client={appointment.Client}
-                id={appointment.id}
-      // edit={()=>update(a)}
+                appointment={appointment}
+                onclickDelete={() => onclickDelete(appointment.id)}
               />
             ))
           ) : (

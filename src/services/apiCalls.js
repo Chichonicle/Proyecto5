@@ -58,7 +58,7 @@ export const GetAllAppointments = async (token) => {
     },
   });
 };
-export const deleteAppointment = async (token, body) => {
+export const deleteAppointment = async (token, body) => {console.log(token);
   return await axios.delete(`http://localhost:3000/appointments/delete`, {
     headers: {
       Authorization: `Bearer ${token}`
