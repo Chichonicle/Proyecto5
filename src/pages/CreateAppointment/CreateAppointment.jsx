@@ -51,31 +51,22 @@ export const Newappointment = () => {
     <div className="createDesign">
       <div className="Name">Titulo</div>
       <ImputAppointments
-        disabled={false}
-        design={"inputDesign"}
         type={"text"}
         name={"title"}
-        placeholder={""}
         value={""}
         functionProp={functionHandler}
       />
       <div className="Name">Descripción</div>
       <ImputAppointments
-        disabled={false}
-        design={"inputDesign"}
         type={"text"}
         name={"description"}
-        placeholder={""}
         value={""}
         functionProp={functionHandler}
       />
       <div className="Name">Fecha</div>
       <ImputAppointments
-        disabled={false}
-        design={"inputDesign"}
         type={"date"}
         name={"date"}
-        placeholder={""}
         value={""}
         functionProp={functionHandler}
       />
@@ -86,20 +77,15 @@ export const Newappointment = () => {
       </select>
       <div className="Name">Trabajador</div>
       <WorkerSelector
-        disabled={false}
-        design={"inputDesign"}
         type={"text"}
         name={"worker"}
-        placeholder={""}
         functionProp={functionHandler}
       />
       <div className="Name">Cliente</div>
       <ImputAppointments
         disabled={true}
-        design={"inputDesign"}
         type={"text"}
         name={"client"}
-        placeholder={""}
         value={datosRdxUser.credentials.user.name}
         functionProp={functionHandler}
       />

@@ -1,7 +1,7 @@
 import React from "react";
 import "./AppointmentCard.css";
 
-export const AppointmentCard = ({ appointment, onclickDelete }) => {
+export const AppointmentCard = ({ appointment, onclickDelete, edit }) => {
   const {
     title,
     description,
@@ -23,7 +23,7 @@ export const AppointmentCard = ({ appointment, onclickDelete }) => {
         <div className="Delete" onClick={onclickDelete}>
           Delete
         </div>
-        {/* <div className='Delete' onClick={edit}>Edit</div> */}
+        <div className='Delete' onClick={edit}>Edit</div>
       </div>
     </div>
   );
