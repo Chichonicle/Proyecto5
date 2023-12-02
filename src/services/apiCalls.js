@@ -66,4 +66,11 @@ export const deleteAppointment = async (token, body) => {
   data: body,
 })
 }
+export const updateAppointment = async (token, body,) => {
+  return await axios.post(`http://localhost:3000/appointments/update`, body, {
+    headers: {
+      Authorization: `Bearer ${token}`
+  },
+})
+}
 

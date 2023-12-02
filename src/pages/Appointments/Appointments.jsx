@@ -4,6 +4,7 @@ import {
   GetAppointments,
   GetWorkerAppointments,
   deleteAppointment,
+  updateAppointment,
 } from "../../services/apiCalls";
 import { userData } from "../userSlice";
 import { AppointmentCard } from "../../common/AppointmentCard/AppointmentCard";
@@ -38,6 +39,18 @@ export const Appointments = () => {
     alert("Cita eliminada");
   };
 
+  const editAppointmentSubmit = () => {
+    updateAppointment(token, editingAppointment).then
+  
+  ((resultado) => {
+    console.log(resultado);
+
+    setTimeout(() => {
+      navigate("/Profile");
+    }, 500);
+  })
+  .catch((error) => console.log(error));
+};
   const functionHandler = (e) => {
     setEditingAppointment((prevState) => ({
       ...prevState,
@@ -79,7 +92,7 @@ export const Appointments = () => {
             design={"inputDesign"}
             type={"text"}
             name={"title"}
-            value={""}
+            value={editingAppointment.title}
             functionProp={functionHandler}
           />
           <div className="Name">Descripción</div>
@@ -87,7 +100,7 @@ export const Appointments = () => {
             design={"inputDesign"}
             type={"text"}
             name={"description"}
-            value={""}
+            value={editingAppointment.description}
             functionProp={functionHandler}
           />
           <div className="Name">Fecha</div>
@@ -95,7 +108,7 @@ export const Appointments = () => {
             design={"inputDesign"}
             type={"date"}
             name={"date"}
-            value={""}
+            value={editAppointmentSubmit.appointment_date}
             functionProp={functionHandler}
           />
           <div className="Name">Turno</div>
@@ -112,10 +125,11 @@ export const Appointments = () => {
             design={"inputDesign"}
             type={"text"}
             name={"worker"}
+            value={"" }
             functionProp={functionHandler}
           />
 
-          <div className="buttonSubmit">Submit</div>
+          <div className="buttonSubmit" onClick={editAppointmentSubmit}>Submit</div>
         </>
       ) : (
         ""
